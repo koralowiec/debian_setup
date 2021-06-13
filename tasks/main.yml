@@ -1,0 +1,22 @@
+---
+# tasks file for debian_setup
+
+- name: Update cache
+  apt:
+    update_cache: yes
+
+- name: Install packages
+  apt:
+    state: present
+    pkg: "{{ needed_packages }}"
+
+- name: Allow SSH connections
+  ufw:
+    rule: allow
+    name: OpenSSH
+
+- name: Create the user
+  include_tasks: user.yml
+
+- name: Install Docker and Docker Compose
+  include_tasks: docker.yml

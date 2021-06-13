@@ -1,0 +1,16 @@
+galaxy_info:
+  author: koralowiec
+  description: Simple role for setting up a Debian server. It will install tools like vim, tmux, ufw, docker and docker-compose.
+
+  license: GPL-3.0-only
+
+  min_ansible_version: 2.1
+
+  platforms:
+    - name: Debian
+      versions:
+        - 10
+
+  galaxy_tags: []
+
+dependencies: []

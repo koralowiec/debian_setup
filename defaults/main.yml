@@ -1,0 +1,8 @@
+---
+# defaults file for debian_setup
+username: arek
+# password needs to be hashed, use: openssl passwd -6
+password: 
+ssh_public_key_path: ~/.ssh/id_rsa.pub
+docker_compose_version: 1.29.2
+docker_compose_arch: x86_64
