@@ -18,5 +18,8 @@
 - name: Create the user
   include_tasks: user.yml
 
+- name: Change SSH daemon's configuration
+  include_tasks: sshd.yml
+
 - name: Install Docker and Docker Compose
   include_tasks: docker.yml
