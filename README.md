@@ -12,18 +12,55 @@ Hm, I think you probably shouldn't use it!
 Requirements
 ------------
 
-It works on GNU/Linux Debian Buster. 
+It works for servers with GNU/Linux Debian Buster. 
+
+Role Variables
+--------------
+
+To be updated...
 
 Example Playbook
 ----------------
 
-Simple example:
+Install role:
 
+```bash
+ansible-galaxy install koralowiec.debian_setup
 ```
+
+Create a file with the host - `hosts.yml`:
+
+```yaml
+servers:
+  hosts:
+    vps:
+      ansible_host: 192.168.1.1
+      ssh_public_key_path: /home/arek/.ssh/pomarancz.pub
+      username: mariusz
+      # password needs to be hashed, you can use: `openssl passwd -6`
+      password: $6$//pHBGeRvrFI9uRq$ZT70sC9yhamGtwDVrAAIDMP6w/z9TdL9YCf4ncmfJrnr09Sjfl0341C5OyPSSJ3n1X3wyNyoHEMt/bY7a4.0d1
+```
+
+Create a playbook - `test-playbook.yml`:
+
+```yaml
+---
 - hosts: servers
   remote_user: root
   roles:
-    - role: debian_setup
+    - role: koralowiec.debian_setup
+```
+
+Run the playbook:
+
+```bash
+ansible-playbook test-playbook.yml -i hosts.yml -k
+```
+
+When playbook (successfully ends), you should be able to SSH to server (but only as the user with key):
+
+```bash
+ssh -i ~/.ssh/pomarancz mariusz@192.168.1.1
 ```
 
 License
