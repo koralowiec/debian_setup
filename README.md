@@ -1,38 +1,32 @@
-Role Name
+Setup Debian
 =========
 
-A brief description of the role goes here.
+Have you ever created a VPS and felt like you don't want to set the same stuff or install tools like your favorite text editor again? 
+
+Well, I created this role, because sometimes I need a virtual server with Debian for horsing around with stuff and I don't want to create a user or install vim again...
+
+So this role will create a user, install some packages (sudo, vim, tmux, ufw), change a line or two in SSH daemon's config file and install Docker and Docker Compose. Oh, and it will also allow only traffic for SSH (port 22).
+
+Hm, I think you probably shouldn't use it! 
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
-
-Role Variables
---------------
-
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
-
-Dependencies
-------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+It works on GNU/Linux Debian Buster. 
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Simple example:
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+```
+- hosts: servers
+  remote_user: root
+  roles:
+    - role: debian_setup
+```
 
 License
 -------
 
-BSD
-
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+GPL v3
