@@ -10,10 +10,8 @@
     state: present
     pkg: "{{ needed_packages }}"
 
-- name: Allow SSH connections
-  ufw:
-    rule: allow
-    name: OpenSSH
+- name: Set up ufw
+  include_tasks: ufw.yml
 
 - name: Create the user
   include_tasks: user.yml
