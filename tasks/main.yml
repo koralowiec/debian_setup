@@ -21,3 +21,4 @@
 
 - name: Install Docker and Docker Compose
   include_tasks: docker.yml
+  when: install_docker | bool
