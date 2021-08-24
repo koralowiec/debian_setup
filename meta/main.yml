@@ -9,7 +9,8 @@ galaxy_info:
   platforms:
     - name: Debian
       versions:
-        - 10
+        - buster
+        - bullseye
 
   galaxy_tags: []
 

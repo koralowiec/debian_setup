@@ -20,5 +20,9 @@
   include_tasks: sshd.yml
 
 - name: Install Docker and Docker Compose
-  include_tasks: docker.yml
+  vars:
+    docker_users:
+      - "{{ username }}"
+  include_role:
+    name: geerlingguy.docker
   when: install_docker | bool
