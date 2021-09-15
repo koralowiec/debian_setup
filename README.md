@@ -17,15 +17,15 @@ It works for servers with GNU/Linux Debian Buster.
 Role Variables
 --------------
 
-| Variable                   | Default                     | Comment                                                    |
-| --------                   | -------                     | --------                                                   |
-| username                   | arek                        | User with that username will be created                    |
-| password                   |                             | Password fot that user                                     |
-| name                       | value of `inventory_hostname`                 | Hostname                                                   |
-| ssh_public_key_path        | ~/.ssh/id_rsa.pub           | Path to public key (it will be added to `authorized_keys`) |
-| install_docker             | true                        | If Docker and Docker-Compose should be installed           |
-| needed_packages            | sudo, ufw, vim, tmux        | Packages which will be installed                           |
-| ansible_python_interpreter | /usr/bin/python3            |                                                            |
+| Variable                   | Default                       | Comment                                                    |
+| --------                   | -------                       | --------                                                   |
+| username                   | arek                          | User with that username will be created                    |
+| password                   |                               | Password fot that user                                     |
+| name                       | value of `inventory_hostname` | Hostname                                                   |
+| ssh_public_key_path        | ~/.ssh/id_rsa.pub             | Path to public key (it will be added to `authorized_keys`) |
+| install_docker             | true                          | If Docker and Docker-Compose should be installed           |
+| needed_packages            | sudo, ufw, vim, tmux          | Packages which will be installed                           |
+| ansible_python_interpreter | /usr/bin/python3              |                                                            |
 
 Example Playbook
 ----------------
