@@ -6,3 +6,4 @@ needed_packages:
   - ufw
   - vim
   - tmux
+hostname: "{{ name if (name is defined) else inventory_hostname }}"

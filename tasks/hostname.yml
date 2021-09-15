@@ -1,0 +1,12 @@
+---
+
+- name: Set hostname
+  hostname:
+    name: "{{ hostname }}" 
+    use: debian
+
+- name: Put updated hostname in /etc/hosts
+  lineinfile:
+    path: /etc/hosts
+    regexp: '^(.*)127.0.1.1(.*)$'
+    line: "127.0.1.1\t{{ hostname }}"

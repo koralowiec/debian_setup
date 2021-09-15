@@ -26,3 +26,7 @@
   include_role:
     name: geerlingguy.docker
   when: install_docker | bool
+
+- name: Change the hostname
+  include_tasks: hostname.yml
+  when: ansible_hostname != hostname
