@@ -3,7 +3,6 @@
 - name: Set hostname
   hostname:
     name: "{{ hostname }}" 
-    use: debian
 
 - name: Put updated hostname in /etc/hosts
   lineinfile: 
